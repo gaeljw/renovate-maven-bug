@@ -11,15 +11,22 @@
 
    <properties>
       <scala.binary.version>2.12</scala.binary.version>
+      <recursive.property>_${scala.binary.version}</recursive.property>
    </properties>
 
    <dependencies>
 
       <dependency>
          <groupId>io.cucumber</groupId>
-         <artifactId>cucumber-scala_${scala.binary.version}</artifactId>
+         <artifactId>cucumber-scala${recursive.property}</artifactId>
          <version>8.5.1</version>
          <scope>test</scope>
+      </dependency>
+      
+     <dependency>
+         <groupId>org.typelevel</groupId>
+         <artifactId>cats-core_${scala.binary.version}</artifactId>
+         <version>2.6.1</version>
       </dependency>
 
       <dependency>
