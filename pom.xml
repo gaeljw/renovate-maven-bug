@@ -3,6 +3,13 @@
 
    <modelVersion>4.0.0</modelVersion>
 
+   <parent>
+      <dependency>
+      <groupId>org.apache</groupId>
+      <artifactId>apache</artifactId>
+      <version>25</version>
+   </parent>
+   
    <groupId>com.github.gaeljw</groupId>
    <artifactId>bug-maven-renovate</artifactId>
    <version>0.0.1</version>
@@ -15,6 +22,14 @@
    </properties>
 
    <dependencies>
+      
+      <!-- gpg.useagent comes from the parent solr -->
+      <!-- this case doesn't make sense as the parent and this deps are not related at all but highlights the issue -->
+      <dependency>
+         <groupId>net.java.truecommons</groupId>
+         <artifactId>${gpg.useagent}commons-io</artifactId>
+         <version>2.4</version>
+      </dependency>
 
       <dependency>
          <groupId>io.cucumber</groupId>
